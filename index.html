@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My About Me Website</title>
 
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color:white;
+    text-align:center;
+}
+
+nav{
+    background:#111;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-size:18px;
+}
+
+nav a:hover{
+    color:#00d9ff;
+}
+
+.section{
+    display:none;
+    padding:40px;
+}
+
+.active{
+    display:block;
+}
+
+img{
+    width:300px;
+    border-radius:10px;
+}
+
+iframe{
+    margin-top:20px;
+}
+
+</style>
+
+<script>
+
+function showPage(pageId){
+
+    let sections = document.querySelectorAll(".section");
+
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<nav>
+<a href="#" onclick="showPage('home')">Home</a>
+<a href="#" onclick="showPage('game')">Favorite Game</a>
+<a href="#" onclick="showPage('song')">Favorite Song</a>
+</nav>
+
+<!-- HOME PAGE -->
+
+<div id="home" class="section active">
+
+<h1>Welcome to My Website</h1>
+
+<p>Hello! My name is Michael.</p>
+
+<p>
+This website is about me and some of the things I enjoy.
+I like technology, programming, and learning new things.
+</p>
+
+<p>
+Use the tabs above to see my favorite video game character
+and my favorite song.
+</p>
+
+</div>
+
+<!-- GAME PAGE -->
+
+<div id="game" class="section">
+
+<h1>My Favorite Video Game Character</h1>
+
+<p>One of my favorite characters is Sans the Skeleton.</p>
+
+<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Sans_from_Undertale.png" alt="Sans the Skeleton">
+
+<p>
+Sans is a character from the game Undertale and is known for
+his humor and powerful boss fight.
+</p>
+
+</div>
+
+<!-- SONG PAGE -->
+
+<div id="song" class="section">
+
+<h1>My Favorite Song</h1>
+
+<p>Mercy by Shawn Mendes</p>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/KkGVmN68ByU"
+title="Mercy - Shawn Mendes"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</body>
+</html>
